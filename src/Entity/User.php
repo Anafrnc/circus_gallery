@@ -27,7 +27,7 @@ class User
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Role", inversedBy="users")
      */
     private $role;
 
@@ -60,15 +60,16 @@ class User
         return $this;
     }
 
-    public function getRole(): ?string
+    public function getRole(): ?Role
     {
         return $this->role;
     }
 
-    public function setRole(string $role): self
+    public function setRole(?Role $role): self
     {
         $this->role = $role;
 
         return $this;
     }
+
 }
