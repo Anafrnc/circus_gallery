@@ -52,7 +52,6 @@ Encore
         config.useBuiltIns = 'usage';
         config.corejs = 3;
     })
-
     .enableVueLoader()
 
     // enables Sass/SCSS support
